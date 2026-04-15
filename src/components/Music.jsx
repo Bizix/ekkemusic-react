@@ -1,25 +1,23 @@
 import React from 'react';
-import { featuredRelease, platformLinks, topTracks } from './siteData';
+import { featuredRelease, imageAssignments, pageCopy, platformLinks, topTracks } from './siteData';
+
+const imageMap = Object.fromEntries(imageAssignments.map((image) => [image.id, image]));
 
 function Music() {
   return (
     <section className="page">
       <div className="content_frame section_shell page_intro">
         <div className="section_heading">
-          <div className="eyebrow">Music</div>
-          <h1>Start with the records that open the world up fastest.</h1>
-          <p className="lead">
-            This page gives streaming-first visitors a cleaner path through the catalog:
-            one featured release, a few strong entry points, and direct links to every
-            major platform already in rotation.
-          </p>
+          <div className="eyebrow">{pageCopy.music.intro.eyebrow}</div>
+          <h1>{pageCopy.music.intro.title}</h1>
+          <p className="lead">{pageCopy.music.intro.description}</p>
         </div>
       </div>
 
       <div className="content_frame section_shell feature_section">
         <div className="feature_split">
           <div className="feature_media">
-            <img src={featuredRelease.image} alt={featuredRelease.title} />
+            <img src={imageMap[featuredRelease.imageId].src} alt={imageMap[featuredRelease.imageId].alt} />
           </div>
 
           <div className="feature_body">
@@ -50,12 +48,9 @@ function Music() {
 
       <div className="content_frame section_shell">
         <div className="section_heading">
-          <div className="eyebrow">Top tracks</div>
-          <h2>Lead with the songs people should hear first.</h2>
-          <p>
-            The best artist sites don’t just link out to streaming platforms. They help
-            visitors understand which records are the clearest way in.
-          </p>
+          <div className="eyebrow">{pageCopy.music.tracks.eyebrow}</div>
+          <h2>{pageCopy.music.tracks.title}</h2>
+          <p>{pageCopy.music.tracks.description}</p>
         </div>
 
         <div className="card_grid">
@@ -68,7 +63,7 @@ function Music() {
               rel="noreferrer"
             >
               <div className="media_thumb">
-                <img src={track.image} alt={track.title} />
+                <img src={imageMap[track.imageId].src} alt={imageMap[track.imageId].alt} />
               </div>
               <span>{track.tag}</span>
               <strong>{track.title}</strong>
@@ -78,15 +73,21 @@ function Music() {
         </div>
       </div>
 
-      <div className="content_frame section_shell">
+      <div className="content_frame section_shell platforms_section">
         <div className="section_heading">
-          <div className="eyebrow">Platforms</div>
-          <h2>Listen wherever you already are.</h2>
+          <div className="eyebrow">{pageCopy.music.platforms.eyebrow}</div>
+          <h2>{pageCopy.music.platforms.title}</h2>
         </div>
 
         <div className="pill_row" aria-label="Streaming platforms">
           {platformLinks.map((platform) => (
-            <a key={platform.label} className="pill_link" href={platform.href} target="_blank" rel="noreferrer">
+            <a
+              key={platform.label}
+              className="pill_link"
+              href={platform.href}
+              target="_blank"
+              rel="noreferrer"
+            >
               {platform.label}
             </a>
           ))}

@@ -1,24 +1,34 @@
 import React from 'react';
-import { bios, bookingInfo, pressFacts, pressLinks } from './siteData';
+import { bios, bookingInfo, imageAssignments, pageCopy, pressFacts, pressLinks } from './siteData';
+
+const imageMap = Object.fromEntries(imageAssignments.map((image) => [image.id, image]));
 
 function Press() {
   return (
     <section className="page">
       <div className="content_frame section_shell page_intro">
         <div className="section_heading">
-          <div className="eyebrow">Press</div>
-          <h1>Press-ready context for curators, bookers, and collaborators.</h1>
-          <p className="lead">
-            This page gives the site an EPK-style center of gravity even before a full
-            downloadable press kit is added.
-          </p>
+          <div className="eyebrow">{pageCopy.press.intro.eyebrow}</div>
+          <h1>{pageCopy.press.intro.title}</h1>
+          <p className="lead">{pageCopy.press.intro.description}</p>
+        </div>
+      </div>
+
+      <div className="content_frame section_shell">
+        <div className="press_visual_split">
+          <div className="feature_media">
+            <img src={imageMap.daylight.src} alt={imageMap.daylight.alt} />
+          </div>
+          <div className="feature_media">
+            <img src={imageMap.livePrimary.src} alt={imageMap.livePrimary.alt} />
+          </div>
         </div>
       </div>
 
       <div className="content_frame section_shell">
         <div className="section_heading">
-          <div className="eyebrow">Quick facts</div>
-          <h2>The essentials someone can scan in under a minute.</h2>
+          <div className="eyebrow">{pageCopy.press.facts.eyebrow}</div>
+          <h2>{pageCopy.press.facts.title}</h2>
         </div>
 
         <div className="card_grid card_grid-tight">

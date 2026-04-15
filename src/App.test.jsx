@@ -12,7 +12,7 @@ test('renders the home hero content', () => {
 
   expect(
     screen.getByRole('heading', {
-      name: /ekke makes rap feel cinematic, personal, and impossible to box in/i,
+      name: /ekke connects accra and vancouver with rap that feels cinematic, direct, and built to move/i,
     })
   ).toBeInTheDocument();
 

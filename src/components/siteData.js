@@ -49,12 +49,51 @@ export const navItems = [
   { to: '/contact', label: 'Contact' },
 ];
 
+export const imageAssignments = [
+  {
+    id: 'hero',
+    src: '/images/2026-refresh/neon-portrait-blue.jpg',
+    alt: 'Ekke posed in front of a bright neon sign.',
+  },
+  {
+    id: 'heroSupport',
+    src: '/images/2026-refresh/neon-window-reflection.jpg',
+    alt: 'Ekke framed by a glowing neon window reflection.',
+  },
+  {
+    id: 'featured',
+    src: '/images/2026-refresh/neon-window-reflection.jpg',
+    alt: 'Ekke turning away from a glowing neon storefront window.',
+  },
+  {
+    id: 'daylight',
+    src: '/images/2026-refresh/daylight-portrait-cream.jpg',
+    alt: 'Ekke standing in a bright all-cream outfit outdoors.',
+  },
+  {
+    id: 'livePrimary',
+    src: '/images/2026-refresh/live-stage-point.jpg',
+    alt: 'Ekke performing on stage and pointing into the crowd.',
+  },
+  {
+    id: 'liveSecondary',
+    src: '/images/2026-refresh/live-mic-purple.jpg',
+    alt: 'Ekke holding a microphone under purple stage lighting.',
+  },
+  {
+    id: 'liveCloseup',
+    src: '/images/2026-refresh/live-closeup-red.jpg',
+    alt: 'Ekke performing close to the camera under red and pink lighting.',
+  },
+];
+
 export const heroData = {
   eyebrow: 'Accra to Vancouver',
-  title: 'Ekke makes rap feel cinematic, personal, and impossible to box in.',
+  title: 'Ekke connects Accra and Vancouver with rap that feels cinematic, direct, and built to move.',
   lead:
-    'Built on sharp writing, eclectic production, and a clear artistic point of view, the world around Ekke moves between music videos, collaborations, cyphers, and records that hit from different angles without losing the core.',
-  location: 'Pronounced AyKay. Rapper, songwriter, and multidisciplinary artist.',
+    'Pronounced AyKay, Ekke builds records that can hold sharp bars, neon-lit mood, and stage-first energy in the same world. From Bizix collaborations to a Lil B feature, the catalog keeps moving without losing the core.',
+  location:
+    'Rapper, songwriter, and multidisciplinary artist working across records, visuals, live performance, podcast appearances, and cypher moments.',
   ctas: [
     {
       label: 'Listen Now',
@@ -73,32 +112,19 @@ export const heroData = {
       type: 'secondary',
     },
   ],
-  highlights: [
-    {
-      label: 'Featured artist',
-      value: '4CAST includes a feature from Lil B',
-    },
-    {
-      label: 'Worldbuilding',
-      value: 'Music, visuals, podcast appearances, and cypher moments all feed the same identity',
-    },
-    {
-      label: 'Open for',
-      value: 'Live bookings, collaborations, press opportunities, and creative partnerships',
-    },
-  ],
 };
 
 export const featuredRelease = {
   eyebrow: 'Featured release',
   title: 'HDKN (feat. Bizix)',
   description:
-    'One of the clearest entry points into Ekke’s world: a fan-favorite record with Bizix that bridges sharp rap writing, sticky rhythm, and a visual rollout that still hits.',
-  image: '/images/DSCF6160.jpg',
+    'HDKN is one of the strongest first stops in the catalog: a Bizix-linked record with enough bite, replay value, and visual energy to explain the project fast to both fans and first-time visitors.',
+  imageId: 'featured',
+  supportImageId: 'daylight',
   stats: [
-    'SoundCloud standout',
-    'Connected to one of the biggest YouTube visuals',
-    'Produced with Bizix',
+    'Top entry point for new listeners',
+    'Connected to one of the strongest video rollouts',
+    'Part of the Bizix collaboration thread in the catalog',
   ],
   actions: [
     {
@@ -114,72 +140,161 @@ export const featuredRelease = {
   ],
 };
 
+export const youtubeVideos = [
+  {
+    id: 'hdkn-video',
+    title: 'HDKN music video',
+    href: 'https://www.youtube.com/watch?v=wfmNJaa9FYg',
+    videoId: 'wfmNJaa9FYg',
+    type: 'Featured video',
+    featured: true,
+    note: 'The clearest video entry point into the current Ekke world.',
+    related: 'HDKN (feat. Bizix)',
+  },
+  {
+    id: 'visual-two',
+    title: 'Second-biggest music video',
+    href: 'https://www.youtube.com/watch?v=jynFGRlWTBU',
+    videoId: 'jynFGRlWTBU',
+    type: 'Visual follow-up',
+    featured: false,
+    note: 'A second visual proof point that widens the feel of the catalog quickly.',
+    related: 'YouTube visual',
+  },
+  {
+    id: 'lil-b-collab',
+    title: '4CAST with Lil B',
+    href: 'https://www.youtube.com/watch?v=zVYdPjNh5VU',
+    videoId: 'zVYdPjNh5VU',
+    type: 'Collaboration',
+    featured: false,
+    note: 'A major collaboration that gives new visitors instant context and credibility.',
+    related: '4CAST',
+  },
+  {
+    id: 'podcast-feature',
+    title: 'Podcast feature',
+    href: 'https://www.youtube.com/watch?v=aubsAGgbldI',
+    videoId: 'aubsAGgbldI',
+    type: 'Conversation',
+    featured: false,
+    note: 'Lets visitors see the project in conversation, not just in release mode.',
+    related: 'Podcast',
+  },
+  {
+    id: 'cypher-appearance',
+    title: 'Cypher appearance',
+    href: 'https://www.youtube.com/watch?v=KHLK5E5Kf78',
+    videoId: 'KHLK5E5Kf78',
+    type: 'Bars first',
+    featured: false,
+    note: 'Strong proof for rap listeners who want to hear the pen and presence directly.',
+    related: 'Cypher',
+  },
+];
+
 export const topTracks = [
   {
     title: 'HDKN (feat. Bizix)',
-    note: 'A proven fan favorite and one of the strongest bridges between the music and video sides of the project.',
+    note: 'A strong front door into the project and one of the clearest bridges between the records and the visuals.',
     href: 'https://soundcloud.com/itsekke/hdkn-feat-bizix',
-    image: '/images/Shoots/IMG_0036.jpg',
+    imageId: 'heroSupport',
     tag: 'Top track',
   },
   {
     title: '4CAST (feat. Lil B)',
-    note: 'A major collaboration that immediately adds context and credibility for new listeners.',
+    note: 'The biggest-name collaboration in the catalog, and a smart credibility cue for first-time listeners.',
     href: 'https://soundcloud.com/itsekke/4cast-gm-master2-48k24',
-    image: '/images/Performance/quarry-16.jpg',
+    imageId: 'livePrimary',
     tag: 'Featured artist',
   },
   {
     title: 'BKE',
-    note: 'A punchier entry in the catalog that helps round out the page beyond one flagship release.',
+    note: 'A punchier record to pair with the bigger marquee moments and give the page more range.',
     href: 'https://soundcloud.com/itsekke/bke',
-    image: '/images/Performance/Biltmore-6.jpg',
+    imageId: 'daylight',
     tag: 'Fan favorite',
   },
   {
     title: 'CAMERAZ',
-    note: 'Another Bizix-linked cut that helps reinforce the collaborative ecosystem around the project.',
+    note: 'Another Bizix-threaded cut that helps connect the wider collaboration ecosystem around Ekke.',
     href: 'https://soundcloud.com/itsekke/cameraz-prod-bizix',
-    image: '/images/Shoots/IMG_0103.jpg',
+    imageId: 'liveSecondary',
     tag: 'Visual energy',
   },
 ];
 
-export const videoHighlights = [
+export const liveClips = [
   {
-    title: 'HDKN music video',
-    note: 'Lead with the biggest music-video moment as the main visual entry point.',
-    href: 'https://www.youtube.com/watch?v=wfmNJaa9FYg',
-    videoId: 'wfmNJaa9FYg',
-    type: 'Biggest MV',
+    id: 'live-clip-1',
+    title: 'Live clip 01',
+    path: '/videos/live/ekke-live-clip-1.mp4',
+    orientation: 'landscape',
+    performanceDate: 'Date TBC',
+    note: 'Performance date will be updated once confirmed.',
+    showId: 'show-1',
   },
   {
-    title: 'Second-biggest music video',
-    note: 'Keep the follow-up visual close by so new visitors can quickly understand the visual range.',
-    href: 'https://www.youtube.com/watch?v=jynFGRlWTBU',
-    videoId: 'jynFGRlWTBU',
-    type: 'Visual follow-up',
+    id: 'live-clip-2',
+    title: 'Live clip 02',
+    path: '/videos/live/ekke-live-clip-2.mp4',
+    orientation: 'landscape',
+    performanceDate: 'Date TBC',
+    note: 'Performance date will be updated once confirmed.',
+    showId: 'show-2',
   },
   {
-    title: '4CAST with Lil B',
-    note: 'Feature the biggest-name collaboration prominently instead of burying it in streaming links.',
-    href: 'https://www.youtube.com/watch?v=zVYdPjNh5VU',
-    videoId: 'zVYdPjNh5VU',
-    type: 'Collaboration',
+    id: 'live-clip-3',
+    title: 'Live clip 03',
+    path: '/videos/live/ekke-live-clip-3.mp4',
+    orientation: 'landscape',
+    performanceDate: 'Date TBC',
+    note: 'Performance date will be updated once confirmed.',
+    showId: 'show-3',
   },
   {
-    title: 'Podcast feature',
-    note: 'Shows the project in conversation, not just in polished release mode.',
-    href: 'https://www.youtube.com/watch?v=aubsAGgbldI',
-    videoId: 'aubsAGgbldI',
-    type: 'Conversation',
+    id: 'live-clip-4',
+    title: 'Live clip 04',
+    path: '/videos/live/ekke-live-clip-4.mp4',
+    orientation: 'portrait',
+    performanceDate: 'Date TBC',
+    note: 'Performance date will be updated once confirmed.',
+    showId: 'show-4',
+  },
+];
+
+export const pastShows = [
+  {
+    id: 'show-1',
+    title: 'Past show archive 01',
+    date: 'Date TBC',
+    venue: 'Venue TBC',
+    city: 'City TBC',
+    note: 'Associated with the first approved live clip and ready for the confirmed date.',
   },
   {
-    title: 'Cypher appearance',
-    note: 'A strong credibility cue for rap listeners who want proof of pen and presence.',
-    href: 'https://www.youtube.com/watch?v=KHLK5E5Kf78',
-    videoId: 'KHLK5E5Kf78',
-    type: 'Bars first',
+    id: 'show-2',
+    title: 'Past show archive 02',
+    date: 'Date TBC',
+    venue: 'Venue TBC',
+    city: 'City TBC',
+    note: 'Associated with the second approved live clip and ready for the confirmed date.',
+  },
+  {
+    id: 'show-3',
+    title: 'Past show archive 03',
+    date: 'Date TBC',
+    venue: 'Venue TBC',
+    city: 'City TBC',
+    note: 'Associated with the third approved live clip and ready for the confirmed date.',
+  },
+  {
+    id: 'show-4',
+    title: 'Past show archive 04',
+    date: 'Date TBC',
+    venue: 'Venue TBC',
+    city: 'City TBC',
+    note: 'Associated with the fourth approved live clip and ready for the confirmed date.',
   },
 ];
 
@@ -201,38 +316,146 @@ export const pressFacts = [
 
 export const bios = {
   short:
-    'Ekke is a rapper and multidisciplinary artist connecting Accra and Vancouver through sharp writing, flexible production choices, and a presentation style that treats every release like part of a larger world.',
+    'Ekke is a rapper and multidisciplinary artist connecting Accra and Vancouver through sharp writing, flexible production choices, and a visual language that makes each release feel like part of a larger world.',
   medium:
-    'Ekke builds records that stay rooted in rap while pulling from multiple sonic directions without sounding unfocused. The project moves between direct bars, cinematic mood, collaborative chemistry with artists like Bizix, and visual moments that make the music feel bigger than a single drop. With standout releases including HDKN and 4CAST featuring Lil B, plus podcast and cypher appearances that reinforce the pen behind the music, Ekke is building an artist platform designed for listeners, curators, and bookers who want something distinctive rather than interchangeable.',
+    'Ekke makes rap that can hold direct writing, cinematic mood, and left-field production choices without losing focus. The project moves between Bizix collaborations, standout records like HDKN, a Lil B feature on 4CAST, music-video rollouts, podcast appearances, and cypher moments that prove the bars can stand on their own. The result is an artist platform designed for listeners, curators, and bookers who want a voice with identity instead of something interchangeable.',
 };
 
 export const bookingInfo = {
   email: 'ekke.music.gh@gmail.com',
+  summary:
+    'For bookings, festival slots, interviews, and collaborations, send the city, date, budget range, and a short brief.',
   note:
-    'For festival slots, venue bookings, interviews, features, or visual collaborations, send the city, proposed date, budget range, and a short brief.',
-  listHref:
-    'mailto:ekke.music.gh@gmail.com?subject=Join%20the%20Ekke%20list&body=Hi%20Ekke%2C%20please%20add%20me%20to%20the%20mailing%20list%20for%20music%2C%20shows%2C%20and%20updates.',
+    'For venue bookings, festival slots, media features, or creative collaborations, include the city, proposed date, budget range, and a short brief so the reply can move faster.',
+  listHref: '/#newsletter',
 };
 
-export const showStatus = {
-  eyebrow: 'Shows',
-  title: 'New dates are on deck.',
+export const newsletterConfig = {
+  provider: 'buttondown',
+  status: 'pending',
+  actionUrl: '',
+  heading: 'Join the list before the next rollout lands.',
   description:
-    'This version of the site is ready to hold tour dates, but until the calendar is posted the page should still help visitors know where to go next: bookings, updates, and direct contact.',
-  bullets: [
-    'Available for venues, festivals, curated lineups, and collaborative events',
-    'Use the contact page for booking inquiries and creative opportunities',
-    'Join the list for release news, show drops, and future announcements',
-  ],
+    'Get release drops, live updates, and first notice when the next phase of the Ekke site and mailing list goes live.',
+  placeholder: 'Enter your email',
+  submitLabel: 'Join the list',
+  pendingNote:
+    'Buttondown will be connected during launch prep. The form is in place and ready for the final publication details.',
+  successMessage:
+    'You are on the list. Check your inbox for confirmation and future updates.',
+  errorMessage:
+    'That signup did not go through. Try again once the Buttondown details are connected.',
+};
+
+export const pageCopy = {
+  home: {
+    watch: {
+      eyebrow: 'Watch',
+      title: 'Start with the visuals that explain the world fastest.',
+      description:
+        'The video side of the project should feel easy to scan: one strongest lead plus the collaborations, podcast moments, and rap-first proof that make the catalog feel lived in.',
+    },
+    live: {
+      eyebrow: 'Live proof',
+      title: 'Real stage energy belongs on the homepage too.',
+      description:
+        'The site should not make visitors guess whether the music translates live. A compact live strip keeps proof of performance visible and sends anyone interested to the full archive.',
+      ctaLabel: 'Open the full shows archive',
+    },
+    music: {
+      eyebrow: 'Music',
+      title: 'Lead with the records people should hear first.',
+      description:
+        'The strongest artist sites do not just link outward. They tell visitors which records are the clearest way in, then make every major platform one tap away.',
+    },
+    booking: {
+      eyebrow: 'Bookings + updates',
+      title: 'Built for listeners, bookers, and collaborators.',
+      description:
+        'The site should feel equally useful to someone finding the music for the first time and to someone trying to book a show, line up a feature, or stay close to the next release.',
+    },
+  },
+  music: {
+    intro: {
+      eyebrow: 'Music',
+      title: 'Start with the records that open the world up fastest.',
+      description:
+        'This page gives streaming-first visitors a cleaner path through the catalog: one featured release, a few strong entry points, and direct links to every major platform already in rotation.',
+    },
+    tracks: {
+      eyebrow: 'Top tracks',
+      title: 'Lead with the songs people should hear first.',
+      description:
+        'The catalog should feel curated, not dumped into a list. These tracks give new listeners a fast read on range, collaboration, and replay value.',
+    },
+    platforms: {
+      eyebrow: 'Platforms',
+      title: 'Listen wherever you already are.',
+    },
+  },
+  videos: {
+    intro: {
+      eyebrow: 'Videos',
+      title: 'A selective embed for the strongest visual, then clean links for the rest.',
+      description:
+        'The site keeps one featured YouTube embed in the main video experience, then lets the supporting music videos, collaborations, podcast moments, and cypher footage stay fast and tidy as outbound cards.',
+    },
+    support: {
+      eyebrow: 'More to watch',
+      title: 'Keep the rest of the video archive easy to scan.',
+      description:
+        'Not every video needs to be embedded. The supporting grid stays light, readable, and ready to send people to the platform where those videos already live.',
+    },
+  },
+  shows: {
+    intro: {
+      eyebrow: 'Shows',
+      title: 'Past performances, live-proof clips, and booking-ready context.',
+      description:
+        'Even before all the dates are confirmed, the shows page should prove the project performs live, give space for the archive, and stay ready for real show details as they come in.',
+    },
+    archive: {
+      eyebrow: 'Past shows',
+      title: 'The archive is ready for confirmed dates and venues.',
+      description:
+        'These entries are placeholders for now, but the structure is already in place for a proper past-shows list instead of an empty page.',
+    },
+    clips: {
+      eyebrow: 'Live clips',
+      title: 'Local clips keep the performance proof on-site.',
+      description:
+        'These approved clips live inside the project so the site can show real performance energy without sending every visitor somewhere else.',
+    },
+  },
+  press: {
+    intro: {
+      eyebrow: 'Press',
+      title: 'Press-ready context for curators, bookers, and collaborators.',
+      description:
+        'This page works like a lightweight EPK center of gravity: fast facts, usable bios, visual context, and direct links that explain the project in minutes.',
+    },
+    facts: {
+      eyebrow: 'Quick facts',
+      title: 'The essentials someone can scan in under a minute.',
+    },
+  },
+  contact: {
+    intro: {
+      eyebrow: 'Contact',
+      title: 'Bookings, collaborations, press, and creative opportunities.',
+      description:
+        'The contact page should tell venues, interviewers, collaborators, and curators exactly how to reach out and what to include, instead of stopping at an email address.',
+    },
+  },
 };
 
 export const pressLinks = [
   {
-    label: 'Watch the biggest music video',
+    label: 'Watch HDKN',
     href: 'https://www.youtube.com/watch?v=wfmNJaa9FYg',
   },
   {
-    label: 'Watch the Lil B collaboration',
+    label: 'Watch 4CAST with Lil B',
     href: 'https://www.youtube.com/watch?v=zVYdPjNh5VU',
   },
   {

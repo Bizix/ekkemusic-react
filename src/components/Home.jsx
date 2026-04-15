@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NewsletterForm from './NewsletterForm';
 import {
   bookingInfo,
   featuredRelease,
   heroData,
+  imageAssignments,
+  liveClips,
+  pageCopy,
   platformLinks,
   topTracks,
-  videoHighlights,
+  youtubeVideos,
 } from './siteData';
+
+const imageMap = Object.fromEntries(imageAssignments.map((image) => [image.id, image]));
 
 function renderAction(action) {
   const className =
@@ -35,7 +41,9 @@ function renderAction(action) {
 }
 
 function Home() {
-  const leadVideo = videoHighlights[0];
+  const featuredYoutube = youtubeVideos.find((video) => video.featured);
+  const supportingYoutube = youtubeVideos.filter((video) => !video.featured).slice(0, 3);
+  const homepageClips = liveClips.slice(0, 2);
 
   return (
     <div className="page page-home">
@@ -51,40 +59,28 @@ function Home() {
 
           <aside className="hero_visual_card">
             <div className="hero_visual_media">
-              <img src="/images/IMG_5039.jpg" alt="Ekke portrait" />
+              <img src={imageMap.hero.src} alt={imageMap.hero.alt} />
             </div>
             <div className="hero_visual_copy">
-              <span className="kicker">Current focus</span>
+              <span className="kicker">Current visual direction</span>
               <strong>{featuredRelease.title}</strong>
               <p>{featuredRelease.description}</p>
             </div>
           </aside>
         </div>
 
-        <div className="content_frame highlight_strip" aria-label="Artist highlights">
-          {heroData.highlights.map((item) => (
-            <article className="info_card compact" key={item.label}>
-              <span>{item.label}</span>
-              <strong>{item.value}</strong>
-            </article>
-          ))}
-        </div>
       </section>
 
       <section className="content_frame section_shell feature_section">
         <div className="section_heading">
           <div className="eyebrow">{featuredRelease.eyebrow}</div>
           <h2>{featuredRelease.title}</h2>
-          <p>
-            The strongest artist sites make the homepage feel alive. This section does
-            that job by giving visitors an immediate record, visual, and set of next
-            steps instead of generic brand language.
-          </p>
+          <p>{featuredRelease.description}</p>
         </div>
 
         <div className="feature_split">
           <div className="feature_media">
-            <img src={featuredRelease.image} alt={featuredRelease.title} />
+            <img src={imageMap[featuredRelease.imageId].src} alt={imageMap[featuredRelease.imageId].alt} />
           </div>
 
           <div className="feature_body">
@@ -113,30 +109,27 @@ function Home() {
 
       <section className="content_frame section_shell">
         <div className="section_heading">
-          <div className="eyebrow">Watch</div>
-          <h2>Video moments that prove the point fast.</h2>
-          <p>
-            New visitors should not have to dig to find the visuals, cypher footage,
-            or collaboration moments that make the project feel real.
-          </p>
+          <div className="eyebrow">{pageCopy.home.watch.eyebrow}</div>
+          <h2>{pageCopy.home.watch.title}</h2>
+          <p>{pageCopy.home.watch.description}</p>
         </div>
 
         <div className="video_grid video_grid-home">
           <a
             className="video_card video_card-lead"
-            href={leadVideo.href}
+            href={featuredYoutube.href}
             target="_blank"
             rel="noreferrer"
             style={{
-              backgroundImage: `linear-gradient(180deg, rgba(7, 7, 7, 0.16), rgba(7, 7, 7, 0.88)), url(https://img.youtube.com/vi/${leadVideo.videoId}/hqdefault.jpg)`,
+              backgroundImage: `linear-gradient(180deg, rgba(7, 7, 7, 0.16), rgba(7, 7, 7, 0.88)), url(https://img.youtube.com/vi/${featuredYoutube.videoId}/hqdefault.jpg)`,
             }}
           >
-            <span>{leadVideo.type}</span>
-            <strong>{leadVideo.title}</strong>
-            <p>{leadVideo.note}</p>
+            <span>{featuredYoutube.type}</span>
+            <strong>{featuredYoutube.title}</strong>
+            <p>{featuredYoutube.note}</p>
           </a>
 
-          {videoHighlights.slice(1, 5).map((video) => (
+          {supportingYoutube.map((video) => (
             <a
               key={video.href}
               className="video_card"
@@ -157,12 +150,43 @@ function Home() {
 
       <section className="content_frame section_shell">
         <div className="section_heading">
-          <div className="eyebrow">Music</div>
-          <h2>Top entry points into the catalog.</h2>
-          <p>
-            The goal here is simple: surface the records people should hear first, then
-            make every major platform one tap away.
-          </p>
+          <div className="eyebrow">{pageCopy.home.live.eyebrow}</div>
+          <h2>{pageCopy.home.live.title}</h2>
+          <p>{pageCopy.home.live.description}</p>
+        </div>
+
+        <div className="live_clip_grid live_clip_grid-home">
+          {homepageClips.map((clip) => (
+            <article className="live_clip_card" key={clip.id}>
+              <video
+                className="clip_video"
+                controls
+                preload="metadata"
+              >
+                <source src={clip.path} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="clip_copy">
+                <span>{clip.performanceDate}</span>
+                <strong>{clip.title}</strong>
+                <p>{clip.note}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="cta_row">
+          <Link className="button button-secondary" to="/shows">
+            {pageCopy.home.live.ctaLabel}
+          </Link>
+        </div>
+      </section>
+
+      <section className="content_frame section_shell">
+        <div className="section_heading">
+          <div className="eyebrow">{pageCopy.home.music.eyebrow}</div>
+          <h2>{pageCopy.home.music.title}</h2>
+          <p>{pageCopy.home.music.description}</p>
         </div>
 
         <div className="card_grid">
@@ -175,7 +199,7 @@ function Home() {
               rel="noreferrer"
             >
               <div className="media_thumb">
-                <img src={track.image} alt={track.title} />
+                <img src={imageMap[track.imageId].src} alt={imageMap[track.imageId].alt} />
               </div>
               <span>{track.tag}</span>
               <strong>{track.title}</strong>
@@ -186,44 +210,36 @@ function Home() {
 
         <div className="pill_row" aria-label="Listening platforms">
           {platformLinks.map((platform) => (
-            <a key={platform.label} className="pill_link" href={platform.href} target="_blank" rel="noreferrer">
+            <a
+              key={platform.label}
+              className="pill_link"
+              href={platform.href}
+              target="_blank"
+              rel="noreferrer"
+            >
               {platform.label}
             </a>
           ))}
         </div>
       </section>
 
-      <section className="content_frame section_shell booking_split">
+      <section className="content_frame section_shell booking_section" id="newsletter">
         <div className="section_heading booking_intro">
-          <div className="eyebrow">Bookings + updates</div>
-          <h2>Built for listeners, bookers, and collaborators.</h2>
-          <p>
-            Strong artist sites always give people a next step. This block turns casual
-            interest into a concrete contact point instead of making visitors hunt for
-            an email in the footer.
-          </p>
+          <div className="eyebrow">{pageCopy.home.booking.eyebrow}</div>
+          <h2>{pageCopy.home.booking.title}</h2>
+          <p>{pageCopy.home.booking.description}</p>
         </div>
 
         <div className="booking_grid">
-          <article className="info_card">
-            <span>Booking</span>
+          <NewsletterForm />
+
+          <article className="info_card booking_card">
+            <div className="eyebrow">Booking</div>
             <strong>Performances, festivals, interviews, and collaborations</strong>
-            <p>{bookingInfo.note}</p>
+            <p>{bookingInfo.summary}</p>
             <Link className="button button-secondary" to="/contact">
               Open contact details
             </Link>
-          </article>
-
-          <article className="info_card">
-            <span>Mailing list</span>
-            <strong>Get release drops and show announcements first.</strong>
-            <p>
-              There is no generic signup widget here yet, so the site uses a direct
-              email opt-in path until a list platform is connected.
-            </p>
-            <a className="button button-primary" href={bookingInfo.listHref}>
-              Join the list
-            </a>
           </article>
         </div>
       </section>

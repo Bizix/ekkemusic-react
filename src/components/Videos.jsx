@@ -1,40 +1,51 @@
 import React from 'react';
-import { videoHighlights } from './siteData';
+import { pageCopy, youtubeVideos } from './siteData';
 
 function Videos() {
-  const [leadVideo, ...supportingVideos] = videoHighlights;
+  const featuredVideo = youtubeVideos.find((video) => video.featured);
+  const supportingVideos = youtubeVideos.filter((video) => !video.featured);
 
   return (
     <section className="page">
       <div className="content_frame section_shell page_intro">
         <div className="section_heading">
-          <div className="eyebrow">Videos</div>
-          <h1>Visuals, features, and rap-first moments in one place.</h1>
-          <p className="lead">
-            This page gives the project a proper video archive, with the biggest music
-            video, the Lil B collaboration, and the supporting appearances that add
-            range and credibility.
-          </p>
+          <div className="eyebrow">{pageCopy.videos.intro.eyebrow}</div>
+          <h1>{pageCopy.videos.intro.title}</h1>
+          <p className="lead">{pageCopy.videos.intro.description}</p>
         </div>
       </div>
 
       <div className="content_frame section_shell">
-        <a
-          className="video_feature"
-          href={leadVideo.href}
-          target="_blank"
-          rel="noreferrer"
-          style={{
-            backgroundImage: `linear-gradient(180deg, rgba(7, 7, 7, 0.16), rgba(7, 7, 7, 0.92)), url(https://img.youtube.com/vi/${leadVideo.videoId}/hqdefault.jpg)`,
-          }}
-        >
-          <span>{leadVideo.type}</span>
-          <strong>{leadVideo.title}</strong>
-          <p>{leadVideo.note}</p>
-        </a>
+        <div className="video_embed_shell">
+          <div className="youtube_embed">
+            <iframe
+              className="youtube_frame"
+              src={`https://www.youtube.com/embed/${featuredVideo.videoId}`}
+              title={featuredVideo.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+
+          <div className="info_card featured_video_card">
+            <span>{featuredVideo.type}</span>
+            <strong>{featuredVideo.title}</strong>
+            <p>{featuredVideo.note}</p>
+            <p className="featured_video_related">Related: {featuredVideo.related}</p>
+            <a className="button button-secondary" href={featuredVideo.href} target="_blank" rel="noreferrer">
+              Open on YouTube
+            </a>
+          </div>
+        </div>
       </div>
 
       <div className="content_frame section_shell">
+        <div className="section_heading">
+          <div className="eyebrow">{pageCopy.videos.support.eyebrow}</div>
+          <h2>{pageCopy.videos.support.title}</h2>
+          <p>{pageCopy.videos.support.description}</p>
+        </div>
+
         <div className="video_grid">
           {supportingVideos.map((video) => (
             <a
