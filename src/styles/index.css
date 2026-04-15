@@ -45,7 +45,7 @@ a {
   z-index: 20;
   padding: 0.9rem 1rem;
   backdrop-filter: blur(18px);
-  background: rgba(8, 8, 8, 0.82);
+  background: rgba(24, 24, 24, 0.88);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -55,12 +55,13 @@ a {
 }
 
 .header_container {
-  width: var(--header-width);
+  width: fit-content;
+  max-width: var(--header-width);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
-  gap: 1rem;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  gap: clamp(0.9rem, 2vw, 2rem);
 }
 
 .brand {
@@ -96,7 +97,7 @@ a {
 }
 
 .navbar_container {
-  justify-self: center;
+  margin-left: 0;
 }
 
 .links {
@@ -138,7 +139,7 @@ a {
 .socialMedia {
   display: flex;
   justify-content: flex-end;
-  justify-self: end;
+  margin-left: 0;
   flex-wrap: nowrap;
   gap: 0.6rem;
 }
@@ -580,6 +581,9 @@ a {
 
 @media (max-width: 1100px) {
   .header_container {
+    width: var(--header-width);
+    max-width: none;
+    display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
@@ -587,6 +591,7 @@ a {
 
   .navbar_container,
   .socialMedia {
+    margin-left: 0;
     justify-self: center;
   }
 
