@@ -12,7 +12,9 @@ test('renders the home hero content', () => {
 
   expect(
     screen.getByRole('heading', {
-      name: /cinematic alt-pop with sharp hooks and late-night energy/i,
+      name: /ekke makes rap feel cinematic, personal, and impossible to box in/i,
     })
   ).toBeInTheDocument();
+
+  expect(screen.getAllByRole('link', { name: /shows/i }).length).toBeGreaterThan(0);
 });

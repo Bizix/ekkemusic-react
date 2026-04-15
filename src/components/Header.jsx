@@ -11,7 +11,7 @@ import {
   faSoundcloud,
 } from '@fortawesome/free-brands-svg-icons';
 import Logo from '../images/Ekke_Logo.png';
-import { musicLink, socialLinks } from './siteData';
+import { musicLink, navItems, socialLinks } from './siteData';
 
 const iconMap = {
   instagram: faInstagram,
@@ -22,12 +22,6 @@ const iconMap = {
   apple: faApple,
 };
 
-const navItems = [
-  { to: '/', label: 'Home' },
-  { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
-];
-
 function Header() {
   return (
     <header className="site-header">
@@ -36,7 +30,6 @@ function Header() {
           <img src={Logo} alt="Ekke logo" />
           <div className="brand_copy">
             <span>Ekke</span>
-            <p>Rapper, songwriter, and multidisciplinary artist</p>
           </div>
         </Link>
 
@@ -54,7 +47,7 @@ function Header() {
             ))}
             <li className="link">
               <a href={musicLink} target="_blank" rel="noreferrer">
-                Music
+                Listen
               </a>
             </li>
           </ul>
