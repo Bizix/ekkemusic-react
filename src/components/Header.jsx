@@ -36,7 +36,7 @@ function Header() {
           <img src={Logo} alt="Ekke logo" />
           <div className="brand_copy">
             <span>Ekke</span>
-            <p>Alt-pop artist and songwriter</p>
+            <p>Rapper, songwriter, and multidisciplinary artist</p>
           </div>
         </Link>
 

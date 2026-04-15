@@ -72,7 +72,7 @@ a {
 }
 
 .brand_copy span,
-.footer_copy strong {
+.footer_prompt span {
   display: block;
   font-family: 'Avenir Next Condensed', 'Arial Narrow', sans-serif;
   font-size: clamp(1.6rem, 3vw, 2.3rem);
@@ -81,7 +81,7 @@ a {
 }
 
 .brand_copy p,
-.footer_copy p {
+.footer_prompt p {
   margin: 0.2rem 0 0;
   color: var(--muted);
   font-size: 0.9rem;
@@ -238,6 +238,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
+  justify-content: center;
 }
 
 .button {
@@ -328,7 +329,7 @@ a {
 
 .footer {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, auto));
+  grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 1rem;
   padding: 1.2rem 1.4rem;
@@ -337,14 +338,18 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer_email {
-  justify-self: start;
-  text-decoration: none;
-  color: var(--text);
+.footer_prompt {
+  max-width: 28rem;
 }
 
-.social_footer {
-  justify-content: center;
+.footer_email {
+  justify-self: center;
+  padding: 0.8rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(245, 197, 58, 0.08);
+  border: 1px solid rgba(245, 197, 58, 0.18);
 }
 
 .copyright {
@@ -399,6 +404,21 @@ a {
   #footer_container {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+
+  .site-header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .brand {
+    flex-direction: column;
+    gap: 0.65rem;
+    text-align: center;
+  }
+
+  .brand_copy p {
+    margin-top: 0.35rem;
   }
 
   .links {

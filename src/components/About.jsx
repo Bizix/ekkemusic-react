@@ -8,29 +8,29 @@ function About() {
         <div className="eyebrow">About</div>
         <h1>It’s pronounced “Ay-Kay.”</h1>
         <p className="lead">
-          Ekke pairs reflective songwriting with polished production, creating a set
-          that feels intimate up close and expansive at full volume.
+          Ekke is a rapper whose work pulls from multiple sonic worlds without being
+          boxed into one lane, grounded by perspective, delivery, and clear artistic identity.
         </p>
         <div className="feature_grid">
           <article className="feature_card">
-            <h2>Live presence</h2>
+            <h2>Artistic range</h2>
             <p>
-              Built for rooms that need atmosphere first and momentum second, with a
-              set designed to scale from small venues to festival stages.
+              The music moves across textures and influences while staying centered
+              on rap, giving the project room to evolve without losing its core.
             </p>
           </article>
           <article className="feature_card">
             <h2>Creative direction</h2>
             <p>
-              Distinct visual branding, moody performance imagery, and a warm gold
-              palette give the project a recognizable identity.
+              Every release is part of a larger world, with visuals, tone, and
+              presentation designed to feel intentional instead of interchangeable.
             </p>
           </article>
           <article className="feature_card">
-            <h2>Collaboration ready</h2>
+            <h2>Open for connection</h2>
             <p>
-              Open to bookings, features, and music placements that fit the sound
-              and story of the project.
+              Available for bookings, collaborations, and opportunities that align
+              with the voice, vision, and direction of the project.
             </p>
           </article>
         </div>
