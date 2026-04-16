@@ -16,8 +16,8 @@ function Videos() {
             <h1>{pageCopy.videos.intro.title}</h1>
             <p className="lead">{pageCopy.videos.intro.description}</p>
             <p className="hero_subcopy">
-              Keep the featured visual up top, use the rest of the archive to widen the frame, and
-              move to shows or press without losing the momentum.
+              Together, these visuals show Ekke looking just as convincing in a rollout, a
+              conversation, or a bars-first setting.
             </p>
             <div className="cta_row hero_cta_row video_intro_actions">
               <a className="button button-primary" href={featuredVideo.href} target="_blank" rel="noreferrer">

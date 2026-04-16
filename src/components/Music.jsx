@@ -15,8 +15,7 @@ function Music() {
             <h1>{pageCopy.music.intro.title}</h1>
             <p className="lead">{pageCopy.music.intro.description}</p>
             <p className="hero_subcopy">
-              Start with the featured release, move through the top four records, then stay in
-              the catalog through the platform links below.
+              If HDKN lands, the rest of this page shows how the catalog opens up from there.
             </p>
             <div className="cta_row hero_cta_row music_intro_actions">
               <a className="button button-primary" href={musicLink} target="_blank" rel="noreferrer">
@@ -31,7 +30,7 @@ function Music() {
                 Watch HDKN
               </a>
               <Link className="button button-secondary" to="/videos">
-                Open videos
+                Watch more vids
               </Link>
             </div>
           </div>
@@ -54,8 +53,8 @@ function Music() {
           <div className="eyebrow">{featuredRelease.eyebrow}</div>
           <h2>{featuredRelease.title}</h2>
           <p>
-            Start here for the record that sets the pressure, the collaboration lane, and the
-            visual tone fastest.
+            If you play one record first, make it this one. It captures the pressure, the Bizix
+            chemistry, and the visual identity in one shot.
           </p>
         </div>
 
@@ -119,7 +118,7 @@ function Music() {
         <div className="section_heading section_heading-centered">
           <div className="eyebrow">{pageCopy.music.platforms.eyebrow}</div>
           <h2>{pageCopy.music.platforms.title}</h2>
-          <p>Stay in the catalog without changing your listening habits. Every major platform stays one tap away.</p>
+          <p>Pick your platform and keep listening. Spotify, Apple Music, SoundCloud, YouTube, and Songwhip are all linked here.</p>
         </div>
 
         <StreamingPlatformLinks ariaLabel="Streaming platforms" className="pill_row home_platform_row" />

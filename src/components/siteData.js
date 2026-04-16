@@ -119,13 +119,13 @@ export const featuredRelease = {
   eyebrow: 'Featured release',
   title: 'HDKN (feat. Bizix)',
   description:
-    'HDKN rides a dark, pressurized beat with the kind of tension that feels close to a late-night Street Fighter stage. The record is down right fierce, and the Bizix feature helps push that energy even harder.',
+    'HDKN locks into a dark beat and keeps the tension high from the first bar. Ekke and Bizix sound sharp, fully in sync, and the visual gives the record the same controlled intensity.',
   imageId: 'featured',
   supportImageId: 'daylight',
   stats: [
-    'Dark production with a locked-in, fight-night feel',
-    'One of the clearest records for the Ekke and Bizix connection',
-    'Backed by one of the strongest visuals in the catalog',
+    'Dark production with real pressure from the first seconds',
+    'Ekke and Bizix at their most locked in',
+    'A video that matches the record bar for bar',
   ],
   actions: [
     {
@@ -197,31 +197,31 @@ export const youtubeVideos = [
 export const topTracks = [
   {
     title: 'HDKN (feat. Bizix)',
-    note: 'Dark, pressurized, and down right fierce. A clean way into the Ekke x Bizix lane.',
+    note: "Dark, tense, and fully locked in. The quickest way to hear Ekke and Bizix hit their stride together.",
     href: 'https://soundcloud.com/itsekke/hdkn-feat-bizix',
     imageId: 'heroSupport',
-    tag: 'Top track',
+    tag: 'START HERE',
   },
   {
     title: '4CAST (feat. Lil B)',
-    note: 'A legendary Lil B verse meets timely lyrics about the everyday struggle and oppression people live through.',
+    note: "A heavier, more reflective cut. The Lil B feature adds reach, but Ekke's writing is what gives the record its weight.",
     href: 'https://soundcloud.com/itsekke/4cast-gm-master2-48k24',
     imageId: 'livePrimary',
-    tag: 'COLLAB',
+    tag: 'FEATURE',
   },
   {
     title: 'BKE',
-    note: "Dancey reggaeton vibes that show how easily Ekke can rap across different sounds without losing his voice.",
+    note: 'A rhythm-first switch-up with real bounce. It shows how easily Ekke can move into a different pocket without losing sharpness.',
     href: 'https://soundcloud.com/itsekke/bke',
     imageId: 'daylight',
-    tag: 'DIRECT HIT',
+    tag: 'RANGE',
   },
   {
     title: 'CAMERAZ',
-    note: 'A high-energy banger that pushes the pace up and keeps the catalog moving at full speed.',
+    note: 'Fast, urgent, and built to move. Hit this next if you want more pace, more attack, and more of the Bizix connection.',
     href: 'https://soundcloud.com/itsekke/cameraz-prod-bizix',
     imageId: 'liveSecondary',
-    tag: 'DARK MOOD',
+    tag: 'ENERGY',
   },
 ];
 
@@ -383,33 +383,33 @@ export const pageCopy = {
   music: {
     intro: {
       eyebrow: 'Music',
-      title: 'Start with the records that open the catalog up fast',
+      title: 'Four records that show what Ekke does best',
       description:
-        'If you are new here, start with HDKN for the dark pressure, 4CAST for the bigger-name feature, then move into BKE and CAMERAZ for more snap, range, and Bizix-threaded energy.',
+        'Begin with HDKN for the pressure and Bizix chemistry, move to 4CAST featuring Lil B for a more reflective turn, then hit BKE and CAMERAZ for bounce, pace, and attack.',
     },
     tracks: {
       eyebrow: 'Top tracks',
-      title: 'Four records that open the catalog up fast',
+      title: 'The four records to play first',
       description:
-        'Each track here does a different job: HDKN sets the tone, 4CAST widens the frame, BKE adds a harder jab, and CAMERAZ keeps the mood and collaboration thread moving.',
+        'These four tracks cover the core of the catalog: pressure, reflection, rhythmic range, and pure momentum.',
     },
     platforms: {
       eyebrow: 'Platforms',
-      title: 'Run the catalog on whatever platform you already use',
+      title: 'Pick your platform and keep listening',
     },
   },
   videos: {
     intro: {
       eyebrow: 'Videos',
-      title: 'Start with the visual that sets the tone fastest',
+      title: "The visual entry point into Ekke's world",
       description:
-        'HDKN is the clearest first watch. After that, 4CAST featuring Lil B, the podcast appearance, and the cypher show different sides of the project without pulling away from the music.',
+        'HDKN is the first watch. After that, move to 4CAST featuring Lil B, the podcast appearance, and the cypher for collaboration, personality, and straight bars.',
     },
     support: {
       eyebrow: 'More to watch',
-      title: 'The rest of the archive fills the picture in',
+      title: 'The rest of the archive shows the full scope',
       description:
-        'The supporting videos show range: stronger collaborations, more conversation, and more bars. Together they make the catalog feel bigger than one release.',
+        'These videos show Ekke from more angles: sharper collaborations, stronger presence on camera, and bars that do not need extra framing. Together, they make it clear this is a full world, not a one-off release.',
     },
   },
   shows: {
