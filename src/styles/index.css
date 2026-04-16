@@ -670,6 +670,10 @@ iframe {
   max-width: 56rem;
 }
 
+.section_heading-live-home h2 {
+  max-width: 26ch;
+}
+
 .section_heading-music {
   max-width: 68rem;
 }
@@ -680,6 +684,10 @@ iframe {
 
 .section_heading-music p {
   max-width: 58rem;
+}
+
+.section_heading-music-home h2 {
+  max-width: 24ch;
 }
 
 .section_heading-booking {

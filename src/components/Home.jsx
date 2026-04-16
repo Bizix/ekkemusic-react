@@ -181,7 +181,7 @@ function Home() {
       </section>
 
       <section className="content_frame section_shell">
-        <div className="section_heading section_heading-centered section_heading-live">
+        <div className="section_heading section_heading-centered section_heading-live section_heading-live-home">
           <div className="eyebrow">{pageCopy.home.live.eyebrow}</div>
           <h2>{pageCopy.home.live.title}</h2>
           <p>{pageCopy.home.live.description}</p>
@@ -226,7 +226,7 @@ function Home() {
       </section>
 
       <section className="content_frame section_shell">
-        <div className="section_heading section_heading-centered section_heading-music">
+        <div className="section_heading section_heading-centered section_heading-music section_heading-music-home">
           <div className="eyebrow">{pageCopy.home.music.eyebrow}</div>
           <h2>{pageCopy.home.music.title}</h2>
           <p>{pageCopy.home.music.description}</p>
