@@ -149,7 +149,7 @@ export const youtubeVideos = [
     videoId: 'wfmNJaa9FYg',
     type: 'MV',
     featured: true,
-    note: 'EKKE x BIZIX = 🔽 ➡️ 🔴',
+    note: 'EKKE x BIZIX = ⬇️ ➡️ 🔴',
     related: 'HDKN (feat. Bizix)',
   },
   {
@@ -231,7 +231,7 @@ export const liveClips = [
     title: 'Stage proof 01',
     path: '/videos/live/ekke-live-clip-1.mp4',
     orientation: 'landscape',
-    startAt: 1,
+    startAt: 0.1,
     performanceDate: 'Date TBC',
     note: 'Performance date will be updated once confirmed.',
     showId: 'show-1',
@@ -299,6 +299,8 @@ export const pastShows = [
     note: 'Associated with the fourth approved live clip and ready for the confirmed date.',
   },
 ];
+
+export const upcomingShows = [];
 
 export const platformLinks = [
   { label: 'Spotify', href: 'https://open.spotify.com/artist/5PLFMpk4XHu8rdpKu4dIta' },
@@ -418,13 +420,12 @@ export const pageCopy = {
         "This page shows how the music lands in real space: live clips, performance proof, and the start of Ekke's live archive.",
     },
     archive: {
-      eyebrow: 'Past shows',
-      title: 'Past shows',
-      description:
-        'A running archive of performances, clips, and live moments.',
+      eyebrow: '',
+      title: '',
+      description: '',
     },
     clips: {
-      eyebrow: 'Live clips',
+      eyebrow: 'Clips',
       title: 'Live clips, straight from the stage',
       description:
         'These clips show how the records land when they leave the screen and hit a room.',

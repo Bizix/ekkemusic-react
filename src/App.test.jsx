@@ -13,5 +13,7 @@ test('renders the home hero content', () => {
 
   expect(screen.getByRole('heading', { name: heroData.title })).toBeInTheDocument();
 
-  expect(screen.getByRole('link', { name: /watch highlights/i })).toBeInTheDocument();
+  heroData.ctas.forEach((action) => {
+    expect(screen.getByRole('link', { name: action.label })).toBeInTheDocument();
+  });
 });
