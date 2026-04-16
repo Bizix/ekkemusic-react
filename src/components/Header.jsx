@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,8 +23,25 @@ const iconMap = {
 };
 
 function Header() {
+  const [isMobileCollapsed, setIsMobileCollapsed] = useState(false);
+
+  useEffect(() => {
+    function syncCollapsedState() {
+      setIsMobileCollapsed(window.innerWidth <= 720 && window.scrollY > 32);
+    }
+
+    syncCollapsedState();
+    window.addEventListener('scroll', syncCollapsedState, { passive: true });
+    window.addEventListener('resize', syncCollapsedState);
+
+    return () => {
+      window.removeEventListener('scroll', syncCollapsedState);
+      window.removeEventListener('resize', syncCollapsedState);
+    };
+  }, []);
+
   return (
-    <header className="site-header">
+    <header className={`site-header${isMobileCollapsed ? ' site-header--collapsed' : ''}`}>
       <div className="header_container">
         <Link className="brand" to="/" aria-label="Ekke home">
           <span className="brand_mark">

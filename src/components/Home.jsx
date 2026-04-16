@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NewsletterForm from './NewsletterForm';
+import StreamingPlatformLinks from './StreamingPlatformLinks';
 import {
   bookingInfo,
   featuredRelease,
@@ -8,7 +9,6 @@ import {
   imageAssignments,
   liveClips,
   pageCopy,
-  platformLinks,
   topTracks,
   youtubeVideos,
 } from './siteData';
@@ -212,19 +212,14 @@ function Home() {
           ))}
         </div>
 
-        <div className="pill_row home_platform_row" aria-label="Listening platforms">
-          {platformLinks.map((platform) => (
-            <a
-              key={platform.label}
-              className="pill_link"
-              href={platform.href}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {platform.label}
-            </a>
-          ))}
+        <div className="home_platform_intro" aria-hidden="true">
+          <h3>{pageCopy.home.music.platformsTitle}</h3>
         </div>
+
+        <StreamingPlatformLinks
+          ariaLabel="Listening platforms"
+          className="pill_row home_platform_row"
+        />
       </section>
 
       <section className="content_frame section_shell booking_section" id="newsletter">

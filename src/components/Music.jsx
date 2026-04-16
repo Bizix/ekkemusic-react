@@ -1,5 +1,6 @@
 import React from 'react';
-import { featuredRelease, imageAssignments, pageCopy, platformLinks, topTracks } from './siteData';
+import StreamingPlatformLinks from './StreamingPlatformLinks';
+import { featuredRelease, imageAssignments, pageCopy, topTracks } from './siteData';
 
 const imageMap = Object.fromEntries(imageAssignments.map((image) => [image.id, image]));
 
@@ -79,19 +80,7 @@ function Music() {
           <h2>{pageCopy.music.platforms.title}</h2>
         </div>
 
-        <div className="pill_row" aria-label="Streaming platforms">
-          {platformLinks.map((platform) => (
-            <a
-              key={platform.label}
-              className="pill_link"
-              href={platform.href}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {platform.label}
-            </a>
-          ))}
-        </div>
+        <StreamingPlatformLinks ariaLabel="Streaming platforms" className="pill_row" />
       </div>
     </section>
   );

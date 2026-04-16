@@ -369,6 +369,7 @@ export const pageCopy = {
       title: 'Start with the records that hit hardest',
       description:
         'Start with HDKN for the dark pressure, move to 4CAST featuring Lil B, then hit BKE and CAMERAZ for more punch and range. Together they open the catalog up fast.',
+      platformsTitle: "Listen where you're already at",
     },
     booking: {
       eyebrow: 'Bookings + updates',

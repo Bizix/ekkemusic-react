@@ -32,6 +32,10 @@ function Footer() {
             Get updates
           </span>
         </div>
+
+        <div className="footer_mobile_meta">
+          <p>&copy; {new Date().getFullYear()} HTOP2</p>
+        </div>
       </div>
     </footer>
   );
