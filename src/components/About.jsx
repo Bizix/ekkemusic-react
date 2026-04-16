@@ -6,7 +6,7 @@ function About() {
       <div className="page_backdrop" />
       <div className="content_frame content_stack">
         <div className="eyebrow">About</div>
-        <h1>It’s pronounced “Ay-Kay.”</h1>
+        <h1>It’s pronounced “Ay-Kay”</h1>
         <p className="lead">
           Ekke is a rapper whose work pulls from multiple sonic worlds without being
           boxed into one lane, grounded by perspective, delivery, and clear artistic identity.

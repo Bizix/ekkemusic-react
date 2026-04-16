@@ -73,7 +73,7 @@ function Press() {
           <strong>{bookingInfo.email}</strong>
           <p>{bookingInfo.note}</p>
           <a className="button button-primary" href={`mailto:${bookingInfo.email}`}>
-            Reach out directly
+            Email for bookings
           </a>
         </article>
       </div>

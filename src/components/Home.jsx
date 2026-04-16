@@ -54,7 +54,7 @@ function Home() {
             <h1>{heroData.title}</h1>
             <p className="lead">{heroData.lead}</p>
             <p className="hero_subcopy">{heroData.location}</p>
-            <div className="cta_row">{heroData.ctas.map(renderAction)}</div>
+            <div className="cta_row hero_cta_row">{heroData.ctas.map(renderAction)}</div>
           </div>
 
           <aside className="hero_visual_card">
@@ -62,7 +62,7 @@ function Home() {
               <img src={imageMap.hero.src} alt={imageMap.hero.alt} />
             </div>
             <div className="hero_visual_copy">
-              <span className="kicker">Current visual direction</span>
+              <span className="kicker">In focus</span>
               <strong>{featuredRelease.title}</strong>
               <p>{featuredRelease.description}</p>
             </div>
@@ -75,10 +75,9 @@ function Home() {
         <div className="section_heading">
           <div className="eyebrow">{featuredRelease.eyebrow}</div>
           <h2>{featuredRelease.title}</h2>
-          <p>{featuredRelease.description}</p>
         </div>
 
-        <div className="feature_split">
+        <div className="feature_split feature_split-featured">
           <div className="feature_media">
             <img src={imageMap[featuredRelease.imageId].src} alt={imageMap[featuredRelease.imageId].alt} />
           </div>
@@ -108,7 +107,7 @@ function Home() {
       </section>
 
       <section className="content_frame section_shell">
-        <div className="section_heading">
+        <div className="section_heading section_heading-centered section_heading-watch">
           <div className="eyebrow">{pageCopy.home.watch.eyebrow}</div>
           <h2>{pageCopy.home.watch.title}</h2>
           <p>{pageCopy.home.watch.description}</p>
@@ -121,7 +120,7 @@ function Home() {
             target="_blank"
             rel="noreferrer"
             style={{
-              backgroundImage: `linear-gradient(180deg, rgba(7, 7, 7, 0.16), rgba(7, 7, 7, 0.88)), url(https://img.youtube.com/vi/${featuredYoutube.videoId}/hqdefault.jpg)`,
+              backgroundImage: `url(https://img.youtube.com/vi/${featuredYoutube.videoId}/hqdefault.jpg)`,
             }}
           >
             <span>{featuredYoutube.type}</span>
@@ -137,7 +136,7 @@ function Home() {
               target="_blank"
               rel="noreferrer"
               style={{
-                backgroundImage: `linear-gradient(180deg, rgba(7, 7, 7, 0.14), rgba(7, 7, 7, 0.9)), url(https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg)`,
+                backgroundImage: `url(https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg)`,
               }}
             >
               <span>{video.type}</span>
@@ -149,7 +148,7 @@ function Home() {
       </section>
 
       <section className="content_frame section_shell">
-        <div className="section_heading">
+        <div className="section_heading section_heading-centered section_heading-live">
           <div className="eyebrow">{pageCopy.home.live.eyebrow}</div>
           <h2>{pageCopy.home.live.title}</h2>
           <p>{pageCopy.home.live.description}</p>
@@ -162,6 +161,11 @@ function Home() {
                 className="clip_video"
                 controls
                 preload="metadata"
+                onLoadedMetadata={(event) => {
+                  if (clip.startAt) {
+                    event.currentTarget.currentTime = clip.startAt;
+                  }
+                }}
               >
                 <source src={clip.path} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -175,7 +179,7 @@ function Home() {
           ))}
         </div>
 
-        <div className="cta_row">
+        <div className="cta_row live_archive_cta">
           <Link className="button button-secondary" to="/shows">
             {pageCopy.home.live.ctaLabel}
           </Link>
@@ -183,7 +187,7 @@ function Home() {
       </section>
 
       <section className="content_frame section_shell">
-        <div className="section_heading">
+        <div className="section_heading section_heading-centered section_heading-music">
           <div className="eyebrow">{pageCopy.home.music.eyebrow}</div>
           <h2>{pageCopy.home.music.title}</h2>
           <p>{pageCopy.home.music.description}</p>
@@ -208,7 +212,7 @@ function Home() {
           ))}
         </div>
 
-        <div className="pill_row" aria-label="Listening platforms">
+        <div className="pill_row home_platform_row" aria-label="Listening platforms">
           {platformLinks.map((platform) => (
             <a
               key={platform.label}
@@ -224,7 +228,7 @@ function Home() {
       </section>
 
       <section className="content_frame section_shell booking_section" id="newsletter">
-        <div className="section_heading booking_intro">
+        <div className="section_heading section_heading-centered section_heading-booking booking_intro">
           <div className="eyebrow">{pageCopy.home.booking.eyebrow}</div>
           <h2>{pageCopy.home.booking.title}</h2>
           <p>{pageCopy.home.booking.description}</p>
@@ -235,7 +239,7 @@ function Home() {
 
           <article className="info_card booking_card">
             <div className="eyebrow">Booking</div>
-            <strong>Performances, festivals, interviews, and collaborations</strong>
+            <h3>Performances, festivals, interviews, and collaborations</h3>
             <p>{bookingInfo.summary}</p>
             <Link className="button button-secondary" to="/contact">
               Open contact details

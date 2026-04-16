@@ -33,7 +33,7 @@ function Videos() {
             <p>{featuredVideo.note}</p>
             <p className="featured_video_related">Related: {featuredVideo.related}</p>
             <a className="button button-secondary" href={featuredVideo.href} target="_blank" rel="noreferrer">
-              Open on YouTube
+              Watch on YouTube
             </a>
           </div>
         </div>
@@ -55,7 +55,7 @@ function Videos() {
               target="_blank"
               rel="noreferrer"
               style={{
-                backgroundImage: `linear-gradient(180deg, rgba(7, 7, 7, 0.14), rgba(7, 7, 7, 0.9)), url(https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg)`,
+                backgroundImage: `url(https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg)`,
               }}
             >
               <span>{video.type}</span>

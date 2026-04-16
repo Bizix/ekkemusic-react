@@ -39,7 +39,7 @@ function Contact() {
       <div className="content_frame section_shell">
         <div className="section_heading">
           <div className="eyebrow">Elsewhere</div>
-          <h2>Follow the project where it already moves.</h2>
+          <h2>Follow the project where it already moves</h2>
         </div>
 
         <div className="pill_row">

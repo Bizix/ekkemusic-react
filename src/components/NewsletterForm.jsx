@@ -7,25 +7,21 @@ function NewsletterForm({ compact = false }) {
   const [email, setEmail] = useState('');
   const [state, setState] = useState({
     status: 'idle',
-    message:
-      newsletterConfig.status === 'pending' ? newsletterConfig.pendingNote : '',
+    message: '',
   });
+  const isDisabled = !newsletterConfig.actionUrl;
 
   async function handleSubmit(event) {
     event.preventDefault();
+
+    if (isDisabled) {
+      return;
+    }
 
     if (!emailPattern.test(email)) {
       setState({
         status: 'error',
         message: 'Enter a valid email address before joining the list.',
-      });
-      return;
-    }
-
-    if (!newsletterConfig.actionUrl) {
-      setState({
-        status: 'error',
-        message: newsletterConfig.pendingNote,
       });
       return;
     }
@@ -64,8 +60,8 @@ function NewsletterForm({ compact = false }) {
       {!compact ? (
         <>
           <div className="eyebrow">Mailing list</div>
-          <h2>{newsletterConfig.heading}</h2>
-          <p>{newsletterConfig.description}</p>
+          <h3>{newsletterConfig.heading}</h3>
+          <p className="newsletter_description">{newsletterConfig.description}</p>
         </>
       ) : (
         <div className="newsletter_compact_header">
@@ -88,17 +84,23 @@ function NewsletterForm({ compact = false }) {
             onChange={(event) => setEmail(event.target.value)}
           />
         </label>
-        <button className="button button-primary newsletter_button" type="submit">
+        <button
+          className="button button-primary newsletter_button"
+          type="submit"
+          disabled={isDisabled || state.status === 'loading'}
+        >
           {state.status === 'loading' ? 'Working...' : newsletterConfig.submitLabel}
         </button>
       </form>
 
-      <p
-        className={`newsletter_status newsletter_status-${state.status}`}
-        aria-live="polite"
-      >
-        {state.message}
-      </p>
+      {state.message ? (
+        <p
+          className={`newsletter_status newsletter_status-${state.status}`}
+          aria-live="polite"
+        >
+          {state.message}
+        </p>
+      ) : null}
     </div>
   );
 }

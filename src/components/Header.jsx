@@ -27,7 +27,9 @@ function Header() {
     <header className="site-header">
       <div className="header_container">
         <Link className="brand" to="/" aria-label="Ekke home">
-          <img src={Logo} alt="Ekke logo" />
+          <span className="brand_mark">
+            <img src={Logo} alt="Ekke logo" />
+          </span>
           <div className="brand_copy">
             <span>Ekke</span>
           </div>
@@ -36,13 +38,19 @@ function Header() {
         <nav className="navbar_container" aria-label="Primary">
           <ul className="links">
             {navItems.map((item) => (
-              <li className="link" key={item.to}>
-                <NavLink
-                  to={item.to}
-                  className={({ isActive }) => (isActive ? 'active' : '')}
-                >
-                  {item.label}
-                </NavLink>
+              <li className="link" key={item.label}>
+                {item.disabled ? (
+                  <span className="nav_disabled" aria-disabled="true">
+                    {item.label}
+                  </span>
+                ) : (
+                  <NavLink
+                    to={item.to}
+                    className={({ isActive }) => (isActive ? 'active' : '')}
+                  >
+                    {item.label}
+                  </NavLink>
+                )}
               </li>
             ))}
             <li className="link">

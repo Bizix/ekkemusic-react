@@ -96,7 +96,36 @@ iframe {
   text-decoration: none;
 }
 
+.brand_mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(4rem, 6vw, 5rem);
+  height: clamp(4rem, 6vw, 5rem);
+  isolation: isolate;
+}
+
+.brand_mark::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 52% 47%,
+      rgba(66, 61, 92, 0.72) 0%,
+      rgba(50, 45, 72, 0.52) 26%,
+      rgba(35, 31, 50, 0.28) 46%,
+      rgba(22, 20, 34, 0.12) 62%,
+      rgba(12, 12, 20, 0) 78%
+    );
+  z-index: 0;
+}
+
 .brand img {
+  position: relative;
+  z-index: 1;
   width: clamp(3rem, 5vw, 4.5rem);
   height: auto;
 }
@@ -141,7 +170,8 @@ iframe {
   background: rgba(30, 24, 41, 0.5);
 }
 
-.link a {
+.link a,
+.nav_disabled {
   display: inline-flex;
   align-items: center;
   min-height: 2.4rem;
@@ -163,6 +193,11 @@ iframe {
     var(--brand-soft);
   color: var(--text);
   transform: translateY(-1px);
+}
+
+.nav_disabled {
+  opacity: 0.42;
+  cursor: default;
 }
 
 .socialMedia {
@@ -312,7 +347,9 @@ iframe {
 
 .page h1,
 .page h2,
-.newsletter_shell h2 {
+.page h3,
+.newsletter_shell h3,
+.booking_card h3 {
   margin: 0;
   font-family: 'Avenir Next Condensed', 'Arial Narrow', sans-serif;
   line-height: 0.95;
@@ -320,14 +357,20 @@ iframe {
 }
 
 .page h1 {
-  max-width: 13ch;
-  font-size: clamp(3.2rem, 8vw, 6.3rem);
+  max-width: 14.5ch;
+  font-size: clamp(3.2rem, 7vw, 5.4rem);
 }
 
-.page h2,
-.newsletter_shell h2 {
+.page h2 {
   max-width: 14ch;
-  font-size: clamp(2.35rem, 5vw, 4rem);
+  font-size: clamp(2.35rem, 5vw, 3.75rem);
+}
+
+.page h3,
+.newsletter_shell h3,
+.booking_card h3 {
+  max-width: 14ch;
+  font-size: clamp(1.95rem, 3.6vw, 2.5rem);
 }
 
 .lead {
@@ -350,6 +393,23 @@ iframe {
   gap: 0.8rem;
 }
 
+.hero_cta_row {
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.hero_cta_row .button {
+  white-space: nowrap;
+  min-width: 12.2rem;
+  padding-inline: 1.1rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+}
+
+.live_archive_cta {
+  justify-content: center;
+}
+
 .button {
   min-height: 3rem;
   padding: 0 1.35rem;
@@ -370,10 +430,22 @@ iframe {
   transform: translateY(-2px);
 }
 
+.button:disabled {
+  transform: none;
+  cursor: not-allowed;
+  opacity: 0.58;
+  box-shadow: none;
+}
+
 .button-primary {
   color: #10120c;
   background: linear-gradient(135deg, #d5df43 0%, #eef77d 100%);
   box-shadow: 0 16px 36px rgba(213, 223, 67, 0.16);
+}
+
+.button-primary:disabled {
+  color: rgba(16, 18, 12, 0.72);
+  background: linear-gradient(135deg, rgba(213, 223, 67, 0.6) 0%, rgba(238, 247, 125, 0.6) 100%);
 }
 
 .button-secondary {
@@ -392,9 +464,79 @@ iframe {
   gap: 0.8rem;
 }
 
+.section_heading-main {
+  display: grid;
+  gap: 0.8rem;
+}
+
 .section_heading p {
   max-width: 44rem;
   line-height: 1.7;
+}
+
+.section_heading-centered {
+  justify-items: center;
+  text-align: center;
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+.section_heading-centered h2 {
+  max-width: 16.5ch;
+  text-wrap: balance;
+}
+
+.section_heading-centered p {
+  max-width: 58rem;
+}
+
+.section_heading-watch {
+  max-width: 76rem;
+}
+
+.section_heading-watch h2 {
+  max-width: 24ch;
+}
+
+.section_heading-watch p {
+  max-width: 60rem;
+}
+
+.section_heading-live {
+  max-width: 72rem;
+}
+
+.section_heading-live h2 {
+  max-width: 18ch;
+}
+
+.section_heading-live p {
+  max-width: 56rem;
+}
+
+.section_heading-music {
+  max-width: 68rem;
+}
+
+.section_heading-music h2 {
+  max-width: 16ch;
+}
+
+.section_heading-music p {
+  max-width: 58rem;
+}
+
+.section_heading-booking {
+  max-width: 78rem;
+}
+
+.section_heading-booking h2 {
+  width: min(100%, 34ch);
+  max-width: none;
+}
+
+.section_heading-booking p {
+  max-width: 56rem;
 }
 
 .feature_split,
@@ -407,45 +549,66 @@ iframe {
   gap: 1rem;
 }
 
+.feature_split-featured {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: start;
+}
+
+.feature_split-featured .feature_media {
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+}
+
 .booking_section {
   gap: 1.25rem;
 }
 
 .booking_grid {
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.88fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.92fr);
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+.booking_grid > .newsletter_shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   align-items: stretch;
 }
 
 .booking_intro {
-  max-width: 54rem;
+  max-width: none;
 }
 
 .booking_intro p {
-  max-width: 48rem;
+  max-width: none;
 }
 
 .booking_card {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  grid-template-rows: auto auto 1fr auto;
-  align-content: stretch;
+  align-items: stretch;
 }
 
-.booking_card strong {
-  max-width: 12ch;
+.booking_card h3 {
+  margin: 0;
+  max-width: 24ch;
   font-family: 'Avenir Next Condensed', 'Arial Narrow', sans-serif;
-  font-size: clamp(3.1rem, 4.8vw, 4.8rem);
-  line-height: 0.94;
+  line-height: 0.95;
   letter-spacing: -0.03em;
+  text-wrap: balance;
 }
 
+.newsletter_description,
 .booking_card p {
-  max-width: 30ch;
-  font-size: clamp(1.05rem, 1.45vw, 1.3rem);
+  max-width: none;
+  font-size: clamp(1.05rem, 1.3vw, 1.22rem);
   line-height: 1.45;
 }
 
 .booking_card .button {
-  align-self: end;
+  margin-top: auto;
 }
 
 .feature_media {
@@ -457,7 +620,7 @@ iframe {
 
 .feature_body {
   display: grid;
-  align-content: center;
+  align-content: start;
   gap: 1rem;
 }
 
@@ -540,8 +703,25 @@ iframe {
 }
 
 .platforms_section .pill_row {
+  display: flex;
   justify-content: center;
-  max-width: 58rem;
+  width: fit-content;
+  max-width: min(58rem, 100%);
+  margin: 0 auto;
+  gap: 0.6rem;
+}
+
+.platforms_section .pill_link {
+  min-height: 2.8rem;
+  padding: 0.7rem 0.95rem;
+  font-size: 0.92rem;
+}
+
+.home_platform_row {
+  justify-content: center;
+  width: fit-content;
+  max-width: min(58rem, 100%);
+  margin: 0 auto;
 }
 
 .pill_link {
@@ -561,6 +741,8 @@ iframe {
 }
 
 .video_card {
+  position: relative;
+  isolation: isolate;
   min-height: 280px;
   display: grid;
   align-content: end;
@@ -572,6 +754,31 @@ iframe {
   background-position: center;
   background-size: cover;
   border: 1px solid var(--line);
+}
+
+.video_card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 7, 7, 0) 0%,
+    rgba(7, 7, 7, 0) 46%,
+    rgba(7, 7, 7, 0.18) 62%,
+    rgba(7, 7, 7, 0.56) 78%,
+    rgba(7, 7, 7, 0.96) 100%
+  );
+  box-shadow:
+    inset 0 -110px 96px rgba(7, 7, 7, 0.72),
+    inset 26px -22px 44px rgba(7, 7, 7, 0.3),
+    inset -26px -22px 44px rgba(7, 7, 7, 0.3);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.video_card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .video_grid {
@@ -705,9 +912,8 @@ iframe {
   align-content: start;
 }
 
-.newsletter_shell h2 {
-  max-width: 10ch;
-  font-size: clamp(2.9rem, 5.2vw, 4.9rem);
+.newsletter_shell h3 {
+  max-width: 16ch;
 }
 
 .newsletter_compact_header {
@@ -719,6 +925,10 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+.booking_grid > .newsletter_shell .newsletter_form {
+  margin-top: auto;
 }
 
 .newsletter_label {
@@ -764,10 +974,6 @@ iframe {
   color: #ffb4a8;
 }
 
-.booking_intro h2 {
-  max-width: 18ch;
-}
-
 .stacked_links {
   display: grid;
   gap: 0.75rem;
@@ -775,6 +981,7 @@ iframe {
 
 .stacked_links a,
 .footer_nav a,
+.footer_nav_disabled,
 .footer_list_link {
   color: var(--text);
   text-decoration: none;
@@ -809,7 +1016,7 @@ iframe {
 }
 
 .footer_nav a,
-.footer_email,
+.footer_nav_disabled,
 .footer_list_link {
   display: inline-flex;
   align-items: center;
@@ -826,7 +1033,6 @@ iframe {
   justify-self: end;
 }
 
-.footer_email,
 .footer_list_link {
   padding: 0.8rem 1rem;
   border-radius: 999px;
@@ -835,17 +1041,10 @@ iframe {
   border: 1px solid rgba(144, 134, 176, 0.22);
 }
 
-.copyright {
-  width: var(--content-width);
-  margin: 0 auto;
-  padding: 0 1rem 2rem;
-  box-sizing: border-box;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.copyright p {
-  margin: 0;
+.footer_nav_disabled,
+.footer_list_link-disabled {
+  opacity: 0.42;
+  cursor: default;
 }
 
 @media (max-width: 1100px) {
@@ -877,7 +1076,8 @@ iframe {
 
   .page h1,
   .page h2,
-  .newsletter_shell h2 {
+  .newsletter_shell h3,
+  .booking_card h3 {
     max-width: none;
   }
 
