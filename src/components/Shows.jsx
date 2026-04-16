@@ -73,15 +73,14 @@ function Shows() {
             <h1>{pageCopy.shows.intro.title}</h1>
             <p className="lead">{pageCopy.shows.intro.description}</p>
             <p className="hero_subcopy">
-              Use the archive for context, the clips for energy, and the booking links when the
-              opportunity is real.
+              Watch the clips, check the archive, and reach out when the fit is real.
             </p>
             <div className="cta_row hero_cta_row shows_intro_actions">
               <a className="button button-primary" href={`mailto:${bookingInfo.email}`}>
                 Email bookings
               </a>
               <Link className="button button-secondary" to="/press">
-                Open press info
+                Read press story
               </Link>
               <Link className="button button-secondary" to="/contact">
                 Contact directly
@@ -95,8 +94,8 @@ function Shows() {
             </div>
             <div className="hero_visual_copy">
               <span className="kicker">Stage proof</span>
-              <strong>{liveClips.length} live clips ready to open the page up fast</strong>
-              <p>{pastShows.length} archive entries are already in place and ready for confirmed dates.</p>
+              <strong>Live clips that show the records holding up on stage</strong>
+              <p>The archive grows as dates and venues are confirmed.</p>
             </div>
           </aside>
         </div>
@@ -115,7 +114,7 @@ function Shows() {
             className={`show_archive_toggle_button${showArchiveView === 'previous' ? ' is-active' : ''}`}
             onClick={() => setShowArchiveView('previous')}
           >
-            Previous Shows
+            Past shows
           </button>
           <button
             type="button"
@@ -124,7 +123,7 @@ function Shows() {
             className={`show_archive_toggle_button${showArchiveView === 'upcoming' ? ' is-active' : ''}`}
             onClick={() => setShowArchiveView('upcoming')}
           >
-            Upcoming
+            Upcoming shows
           </button>
         </div>
 
@@ -134,9 +133,9 @@ function Shows() {
           </div>
         ) : (
           <article className="info_card show_archive_empty">
-            <span>TBA</span>
-            <strong>Upcoming shows are still to be announced. Check back soon.</strong>
-            <p>New dates will appear here as soon as they are confirmed.</p>
+            <span>Coming soon</span>
+            <strong>No public dates yet.</strong>
+            <p>New shows will appear here as soon as they are announced.</p>
           </article>
         )}
       </div>
@@ -165,7 +164,7 @@ function Shows() {
       <div className="content_frame section_shell booking_section">
         <div className="section_heading section_heading-centered section_heading-booking">
           <div className="eyebrow">Bookings</div>
-          <h2>Use the live proof, then reach out with the real details</h2>
+          <h2>Use the live proof, then bring a clear ask</h2>
           <p>{bookingInfo.summary}</p>
         </div>
 
@@ -179,7 +178,7 @@ function Shows() {
                 Email bookings
               </a>
               <Link className="button button-secondary" to="/press">
-                Open press info
+                Read press story
               </Link>
             </div>
           </article>

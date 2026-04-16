@@ -45,6 +45,38 @@ function Home() {
   const supportingYoutube = youtubeVideos.filter((video) => !video.featured).slice(0, 3);
   const homepageClips = liveClips.slice(0, 2);
 
+  const getHomepageClipCopy = (clip, index) => {
+    const isPlaceholderClip =
+      clip.title.startsWith('Stage proof') ||
+      clip.performanceDate === 'Date TBC' ||
+      clip.note === 'Performance date will be updated once confirmed.';
+
+    if (isPlaceholderClip) {
+      const fallbackClips = [
+        {
+          eyebrow: 'Stage proof',
+          title: 'Control and presence',
+          note: 'A quick look at the command, pace, and focus behind the live set.',
+        },
+        {
+          eyebrow: 'Live energy',
+          title: 'How the records land',
+          note: 'A short clip that shows the pressure and momentum carrying into the room.',
+        },
+      ];
+
+      return {
+        ...fallbackClips[index % fallbackClips.length],
+      };
+    }
+
+    return {
+      eyebrow: clip.performanceDate,
+      title: clip.title,
+      note: clip.note,
+    };
+  };
+
   return (
     <div className="page page-home">
       <section className="hero_section">
@@ -75,6 +107,7 @@ function Home() {
         <div className="section_heading">
           <div className="eyebrow">{featuredRelease.eyebrow}</div>
           <h2>{featuredRelease.title}</h2>
+          <p>The clearest record for the pressure, the chemistry, and why this release stands out.</p>
         </div>
 
         <div className="feature_split feature_split-featured">
@@ -155,27 +188,33 @@ function Home() {
         </div>
 
         <div className="live_clip_grid live_clip_grid-home">
-          {homepageClips.map((clip) => (
-            <article className="live_clip_card" key={clip.id}>
-              <video
-                className="clip_video"
-                controls
-                preload="metadata"
-                onLoadedMetadata={(event) => {
-                  if (clip.startAt) {
-                    event.currentTarget.currentTime = clip.startAt;
-                  }
-                }}
-              >
-                <source src={clip.path} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="clip_copy">
-                <span>{clip.performanceDate}</span>
-                <strong>{clip.title}</strong>
-                <p>{clip.note}</p>
-              </div>
-            </article>
+          {homepageClips.map((clip, index) => (
+            (() => {
+              const clipCopy = getHomepageClipCopy(clip, index);
+
+              return (
+                <article className="live_clip_card" key={clip.id}>
+                  <video
+                    className="clip_video"
+                    controls
+                    preload="metadata"
+                    onLoadedMetadata={(event) => {
+                      if (clip.startAt) {
+                        event.currentTarget.currentTime = clip.startAt;
+                      }
+                    }}
+                  >
+                    <source src={clip.path} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <div className="clip_copy">
+                    <span>{clipCopy.eyebrow}</span>
+                    <strong>{clipCopy.title}</strong>
+                    <p>{clipCopy.note}</p>
+                  </div>
+                </article>
+              );
+            })()
           ))}
         </div>
 
@@ -235,9 +274,9 @@ function Home() {
           <article className="info_card booking_card">
             <div className="eyebrow">Booking</div>
             <h3>Performances, festivals, interviews, and collaborations</h3>
-            <p>{bookingInfo.summary}</p>
+            <p>For bookings, interviews, features, and collaborations, reach out directly with the core details and a clear next step.</p>
             <Link className="button button-secondary" to="/contact">
-              Open contact details
+              View contact details
             </Link>
           </article>
         </div>

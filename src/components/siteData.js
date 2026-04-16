@@ -90,9 +90,9 @@ export const imageAssignments = [
 
 export const heroData = {
   eyebrow: 'Accra | Vancouver',
-  title: 'Ekke brings sharp writing and live energy into one lane',
+  title: 'Sharp writing, dark pressure, and a live presence that carries',
   lead:
-    "Pronounced AyKay, Ekke is a rapper, songwriter, and multidisciplinary artist building across records, videos, cyphers, and live sets. The catalog runs from Bizix collaborations to Ekke's 4CAST featuring Lil B, with the writing staying front and center.",
+    "Pronounced AyKay, Ekke is a rapper, songwriter, and multidisciplinary artist building across records, videos, cyphers, and live sets. From Bizix-linked records to 4CAST featuring Lil B, the writing stays front and center.",
   location:
     'Rap-first music with a visual world that moves between Accra and Vancouver.',
   ctas: [
@@ -103,12 +103,12 @@ export const heroData = {
       external: true,
     },
     {
-      label: 'Watch the videos',
+      label: 'Watch the vids',
       href: '/videos',
       type: 'secondary',
     },
     {
-      label: 'Bookings + press',
+      label: 'Press + contact',
       href: '/contact',
       type: 'secondary',
     },
@@ -149,7 +149,7 @@ export const youtubeVideos = [
     videoId: 'wfmNJaa9FYg',
     type: 'MV',
     featured: true,
-    note: 'EKKE x BIZIX = ⬇️ ➡️ 🔴',
+    note: 'The visual that sets the tone fastest: dark, tense, and fully locked into the world of the record.',
     related: 'HDKN (feat. Bizix)',
   },
   {
@@ -159,7 +159,7 @@ export const youtubeVideos = [
     videoId: 'jynFGRlWTBU',
     type: 'MV',
     featured: false,
-    note: "LEMME TELL YOU 'BOUT A GOON / SO MANY CAMERAZ",
+    note: 'A faster, more aggressive visual that pushes the pace up and keeps the Bizix connection moving.',
     related: 'CAMERAZ',
   },
   {
@@ -169,7 +169,7 @@ export const youtubeVideos = [
     videoId: 'zVYdPjNh5VU',
     type: 'COLLAB',
     featured: false,
-    note: '#TYBG 🙏',
+    note: "A collaboration piece with wider reach, anchored by Ekke's writing and presence at the center of it.",
     related: '4CAST',
   },
   {
@@ -179,7 +179,7 @@ export const youtubeVideos = [
     videoId: 'aubsAGgbldI',
     type: 'CONVO',
     featured: false,
-    note: 'Shoutout to Icon Hip Hop',
+    note: 'A conversation-led watch for people who want more voice, personality, and context around the artist.',
     related: 'Podcast',
   },
   {
@@ -312,25 +312,25 @@ export const platformLinks = [
 
 export const pressFacts = [
   'Pronounced AyKay',
-  'Accra and Vancouver roots',
+  'Built between Accra and Vancouver',
   'Rap-first writing with dark, left-field production choices',
-  "Lil B appears on Ekke's 4CAST",
-  'Open for bookings, collaborations, and media opportunities',
+  '4CAST features Lil B',
+  'Available for bookings, collaborations, and media opportunities',
 ];
 
 export const bios = {
   short:
     'Ekke is a rapper, songwriter, and multidisciplinary artist moving between Accra and Vancouver with sharp writing, dark production choices, and a live presence that carries the records off the screen and onto the stage.',
   medium:
-    "Ekke makes rap that hits with direct writing, dark pressure, and a visual sense that keeps the music feeling larger than one release cycle. The project moves between Accra and Vancouver, Bizix-linked records like HDKN and CAMERAZ, Ekke's 4CAST featuring Lil B, music-video rollouts, podcast appearances, cypher moments, and live clips that prove the records carry weight in real space. For curators, writers, and bookers, the throughline is simple: a voice with identity, presence, and records that do not blur into the background.",
+    "Ekke makes rap that hits with direct writing, dark pressure, and a visual sense that gives the project real identity. Built between Accra and Vancouver, the catalog moves from Bizix-linked records like HDKN and CAMERAZ to 4CAST featuring Lil B, with the writing staying front and center throughout. Videos, cyphers, podcast appearances, and live clips all point to the same throughline: a voice with presence, control, and records that do not blur into the background.",
 };
 
 export const bookingInfo = {
   email: 'ekke.music.gh@gmail.com',
   summary:
-    'For bookings, interviews, features, and collaborations, send the city, date, budget range, and a short brief.',
+    'Include the city, date, budget range, and a short brief so the next step is easy to make.',
   note:
-    'For venue bookings, festival slots, media requests, or collaborations, include the city, proposed date, budget range, timeline, and a few lines on the opportunity.',
+    'For venue bookings, festival slots, media requests, or collaborations, send the core details clearly so the reply can move fast.',
   listHref: '/#newsletter',
 };
 
@@ -357,27 +357,27 @@ export const pageCopy = {
       eyebrow: 'Watch',
       title: 'Watch the world take shape',
       description:
-        'Start with HDKN, then move to CAMERAZ, 4CAST featuring Lil B, and the podcast appearance. Together they show the music, the presence, and the range behind the project.',
+        'Start with HDKN, then move to CAMERAZ, 4CAST featuring Lil B, and the podcast appearance to see the music, the personality, and the visual range behind the project.',
     },
     live: {
       eyebrow: 'Live proof',
-      title: 'The records carry weight on stage too',
+      title: 'The records hold up live too',
       description:
-        'These clips show how the music lands in the room and lead into the full live archive.',
+        'A quick look at how the music lands once it hits the room.',
       ctaLabel: 'See the live archive',
     },
     music: {
       eyebrow: 'Music',
-      title: 'Start with the records that hit hardest',
+      title: 'Four records that show what Ekke does best',
       description:
-        'Start with HDKN for the dark pressure, move to 4CAST featuring Lil B, then hit BKE and CAMERAZ for more punch and range. Together they open the catalog up fast.',
-      platformsTitle: "Listen where you're already at",
+        'Start with HDKN for the pressure and Bizix chemistry, then move through 4CAST, BKE, and CAMERAZ for reflection, range, and pace.',
+      platformsTitle: 'Pick your platform and keep listening',
     },
     booking: {
       eyebrow: 'Bookings + updates',
-      title: 'For listeners, bookers, and anyone paying close attention',
+      title: 'Stay close to the next move',
       description:
-        'Use this section to stay close to the next move, reach out about a real opportunity, or get straight to the contact details without digging around.',
+        'Join the list for updates, or reach out directly for bookings, press, features, and real opportunities.',
     },
   },
   music: {
@@ -415,9 +415,9 @@ export const pageCopy = {
   shows: {
     intro: {
       eyebrow: 'Shows',
-      title: 'Shows, live clips, and proof that the records carry over',
+      title: 'Live proof that the records carry',
       description:
-        "This page shows how the music lands in real space: live clips, performance proof, and the start of Ekke's live archive.",
+        'These clips show Ekke bringing the same pressure, control, and presence from the records onto the stage.',
     },
     archive: {
       eyebrow: '',
@@ -426,17 +426,17 @@ export const pageCopy = {
     },
     clips: {
       eyebrow: 'Clips',
-      title: 'Live clips, straight from the stage',
+      title: 'Live clips that show the records working in the room',
       description:
-        'These clips show how the records land when they leave the screen and hit a room.',
+        'Short performance clips that show crowd energy, command, and how the records land once they hit the room.',
     },
   },
   press: {
     intro: {
       eyebrow: 'Press',
-      title: 'A fast read on the music, the voice, and why the project stands out',
+      title: 'The press-ready version of the project',
       description:
-        'Use this page when you need the project in a few sharp passes: who Ekke is, what the records feel like, where the strongest proof lives, and how to reach out without digging around.',
+        'The clearest read on Ekke: the voice, the strongest proof points, the core bio, and the fastest way to reach out.',
     },
     facts: {
       eyebrow: 'Quick facts',
@@ -446,9 +446,9 @@ export const pageCopy = {
   contact: {
     intro: {
       eyebrow: 'Contact',
-      title: 'Bookings, features, press, and serious collaborations',
+      title: 'Bookings, press, features, and real opportunities',
       description:
-        'For shows, festival slots, interviews, features, and other real opportunities, reach out directly. The clearer the ask, the faster the reply.',
+        'For shows, festival slots, interviews, features, and focused collaborations, reach out directly here.',
     },
   },
 };
@@ -467,7 +467,7 @@ export const pressLinks = [
     href: 'https://soundcloud.com/itsekke',
   },
   {
-    label: 'Open Spotify',
+    label: 'Listen on Spotify',
     href: 'https://open.spotify.com/artist/5PLFMpk4XHu8rdpKu4dIta',
   },
 ];

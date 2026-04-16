@@ -35,11 +35,11 @@ function Contact() {
               <a className="button button-primary" href={`mailto:${bookingInfo.email}`}>
                 Send an email
               </a>
-              <a className="button button-secondary" href={bookingInfo.listHref}>
+              <button type="button" className="button button-secondary" disabled>
                 Join the list
-              </a>
+              </button>
               <Link className="button button-secondary" to="/press">
-                Open press info
+                Read press story
               </Link>
             </div>
           </div>
@@ -60,18 +60,15 @@ function Contact() {
       <div className="content_frame section_shell booking_section">
         <div className="section_heading section_heading-centered section_heading-booking">
           <div className="eyebrow">Before you send it</div>
-          <h2>Make the ask specific so the reply can move quickly</h2>
-          <p>Serious opportunities get the fastest responses when the basics are already in the message.</p>
+          <h2>Make the first message easy to act on</h2>
+          <p>The clearer the details, the faster the conversation can move.</p>
         </div>
 
         <div className="booking_split">
           <article className="info_card">
             <span>Best for</span>
             <strong>Bookings, features, press, and serious collaborations</strong>
-            <p>
-              Use this page when the opportunity is real and there is enough detail to move the
-              conversation forward quickly.
-            </p>
+            <p>Use this page when the ask is clear and there is a real next step attached.</p>
             <ul className="bullet_list">
               <li>Live shows, festivals, and venue bookings</li>
               <li>Features, collaborations, and creative partnerships</li>
@@ -81,7 +78,7 @@ function Contact() {
 
           <article className="info_card">
             <span>Include</span>
-            <strong>Make the reply faster and more useful.</strong>
+            <strong>Put the key details in the first message.</strong>
             <ul className="bullet_list">
               <li>Event or project type</li>
               <li>City, venue, or platform</li>
@@ -95,8 +92,8 @@ function Contact() {
       <div className="content_frame section_shell">
         <div className="section_heading section_heading-centered section_heading-wide">
           <div className="eyebrow">Elsewhere</div>
-          <h2>Follow the project where it already moves</h2>
-          <p>Use the platform links below to stay close to releases, visuals, and live updates without leaving the same visual rhythm as the rest of the site.</p>
+          <h2>Follow the project where it moves</h2>
+          <p>Use these links to stay close to releases, visuals, and updates across every platform.</p>
         </div>
 
         <div className="pill_row home_platform_row">
